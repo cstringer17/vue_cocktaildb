@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <Users />
     <Banner />
+    <fullcalendar />
   </div>
 </template>
 <script>
-import Users from "./components/Users.vue";
 import Banner from "./components/Banner.vue"
+import Fullcalendar from "./components/Fullcalendar.vue"
 export default {
   name: "app",
   components: {
-    Users,
     Banner,
+    Fullcalendar,
   },
 };
 </script>

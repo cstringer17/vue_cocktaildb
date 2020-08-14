@@ -1,26 +1,33 @@
 <template>
   <div id="app">
-    <Banner Title="Welcome to Cocktail Hub"/>
-    <SingleDrink />
+    <Banner title="Welcome to Cocktail Hub" />
+    <div class="columns">
+      <SingleDrink class="column"></SingleDrink>
+      
+      
+    </div>
+
     <Footer />
   </div>
 </template>
 <script>
-
-
-import Banner from "./components/Banner.vue"
-import SingleDrink from "./components/SingleDrink"
-import Footer from "./components/Footer"
-import Vue from 'vue';
+import Banner from "./components/Banner.vue";
+import SingleDrink from "./components/SingleDrink";
+import Footer from "./components/Footer";
+import Vue from "vue";
+import Buefy from "buefy";
+import "buefy/dist/buefy.css";
 
 Vue.prototype.$log = console.log;
+
+Vue.use(Buefy);
 
 export default {
   name: "app",
   components: {
     Banner,
     SingleDrink,
-    Footer
+    Footer,
   },
 };
 </script>
@@ -32,9 +39,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  
 }
-html{
-background-color: #FAC8CD;
+html {
+  background-color: #fac8cd;
 }
 </style>

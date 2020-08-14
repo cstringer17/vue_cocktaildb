@@ -1,5 +1,9 @@
 <template>
-  <h3>{{ Title }}</h3>
+<section class="hero is-dark">
+  <div class="hero-body">
+  <h3 class="title">{{ Title }}</h3>
+  </div>
+</section>
 </template>
 <script>
   export default {

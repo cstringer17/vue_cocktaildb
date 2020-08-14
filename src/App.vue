@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <Banner />
-    <fullcalendar />
+    <Banner Title="Welcome to Cocktail Hub"/>
+    <SingleDrink />
+    <Footer />
   </div>
 </template>
 <script>
+
+
 import Banner from "./components/Banner.vue"
-import Fullcalendar from "./components/Fullcalendar.vue"
+import SingleDrink from "./components/SingleDrink"
+import Footer from "./components/Footer"
+import Vue from 'vue';
+
+Vue.prototype.$log = console.log;
+
 export default {
   name: "app",
   components: {
     Banner,
-    Fullcalendar,
+    SingleDrink,
+    Footer
   },
 };
 </script>
@@ -23,5 +32,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  
+}
+html{
+background-color: #FAC8CD;
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <br>
-    <input v-model="input" class="input" />
-    <br>
-    <br>
-    <br>
-    <div v-for="drink in allDrinks" v-bind:key="drink.id">
-      <div v-if="drink.visible" class="is-ancestor">
-        <drink v-bind:drink="drink" class="tile"></drink>
+    <br />
+    <input v-model="input" class="input" id="search" />
+    <br />
+    <br />
+    <br />
+    <div class="flex-container">
+      <div v-for="drink in allDrinks" v-bind:key="drink.id">
+        <drink v-if="drink.visible" v-bind:drink="drink"></drink>
       </div>
     </div>
   </div>
@@ -15,7 +15,6 @@
 
 <script>
 import drink from "./Drink.vue";
-
 
 export default {
   name: "Drinks",
@@ -25,8 +24,8 @@ export default {
   },
   data() {
     return {
-      input: "",
-    }
+      input: ""
+    };
   },
   watch: {
     input: function() {
@@ -44,4 +43,12 @@ export default {
 </script>
 
 <style>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#search{
+  width:50%;
+}
 </style>

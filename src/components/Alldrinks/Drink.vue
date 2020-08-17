@@ -16,9 +16,7 @@ export default {
   height: 100px !important;
 }
 .box{
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
+  margin: 0.5em;
 }
 
 </style>

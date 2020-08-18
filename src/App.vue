@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <Banner title="Welcome to Cocktail Hub" />
-    <AllDrinks />
+    <Banner Title="Welcome to Cocktail Hub" />
+    <router-link to="/">Home</router-link>
+    <router-view/>
 
     <Footer />
   </div>
@@ -9,7 +10,6 @@
 <script>
 //root compentents
 import Banner from "./components/rootComponents/Banner.vue";
-import AllDrinks from "./components/rootComponents/AllDrinks"
 import Footer from "./components/rootComponents/Footer";
 
 import Vue from "vue";
@@ -25,7 +25,6 @@ export default {
   components: {
     Banner,
     Footer,
-    AllDrinks,
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="box">
+    <div v-on:click="goDetailDrink" class="box">
         <h2 class="subtitle">{{ drink.strDrink }}</h2><br>
         <img id="thumbdrink" v-bind:src="drink.strDrinkThumb" />
     </div>
@@ -7,7 +7,12 @@
 
 <script>
 export default {
-  props: ["drink"]
+  props: ["drink"],
+  methods: {
+    goDetailDrink: function () {
+      this.$router.push({  path: '/dv' + this.drink.strDrink  })
+    }
+  }
 };
 </script>
 

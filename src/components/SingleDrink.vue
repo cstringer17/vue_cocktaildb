@@ -82,6 +82,9 @@ export default {
       console.log(message);
     },
     NewDrink: function (event) {
+      document.getElementById("left").style.width = "70%";
+      document.getElementById("right").style.width = "30%";
+      document.getElementById("right").style.marginLeft = "70%";
       axios
         .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
         .then((response) => (this.drinks = response.data.drinks));
@@ -89,6 +92,9 @@ export default {
       this.seen = true;
     },
     notYet: function (event) {
+      document.getElementById("left").style.width = "40%";
+      document.getElementById("right").style.width = "60%";
+      document.getElementById("right").style.marginLeft = "40%";
       this.seen = false;
       console.log(event);
       this.drinks.forEach((element) => {

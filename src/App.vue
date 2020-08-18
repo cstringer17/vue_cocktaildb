@@ -1,9 +1,13 @@
 <template>
   <div id="app">
-    <Banner Title="Welcome to Cocktail Hub" />
-    <router-link to="/">Home</router-link>
-    <router-view/>
-
+    <Banner title="Welcome to Cocktail Hub" />
+    <div id="left">
+      <router-link to="/">Back</router-link>
+      <router-view />
+    </div>
+    <div id = "right">
+      <SingleDrink></SingleDrink>
+    </div>
     <Footer />
   </div>
 </template>
@@ -11,6 +15,7 @@
 //root compentents
 import Banner from "./components/rootComponents/Banner.vue";
 import Footer from "./components/rootComponents/Footer";
+import SingleDrink from "./components/SingleDrink"
 
 import Vue from "vue";
 import Buefy from "buefy";
@@ -25,6 +30,7 @@ export default {
   components: {
     Banner,
     Footer,
+    SingleDrink
   },
 };
 </script>
@@ -38,5 +44,15 @@ export default {
 }
 html {
   background-color: #fac8cd;
+}
+#left{
+  width: 70%;
+  margin-left: 0;
+  position: absolute;
+}
+#right{
+  width: 30%;
+  margin-left: 70%;
+  position: absolute;
 }
 </style>

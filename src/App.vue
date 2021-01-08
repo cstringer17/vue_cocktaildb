@@ -2,7 +2,7 @@
   <div id="app">
     <Banner title="Welcome to Cocktail Hub" />
     <div id="left">
-      <router-link to="/">Back</router-link>
+      <router-link to="/"></router-link>
       <router-view />
     </div>
     <div id = "right">

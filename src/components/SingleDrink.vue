@@ -6,7 +6,7 @@
         <div v-for="drink in drinks" v-bind:key="drink.id">
           <h2 class="title">{{ drink.strDrink }}</h2>
 
-          <img id="thumbdrink" v-bind:src="drink.strDrinkThumb" />
+          <img style="height:200px;width:200px;" id="thumbdrink" v-bind:src="drink.strDrinkThumb" />
 
           <div class="container buttons has-text-centered">
             <button v-on:click="NewDrink" class="button">Yes</button>
@@ -19,24 +19,14 @@
     <section v-if="!seen">
       <div v-for="drink in drinks" v-bind:key="drink.id">
         <div class="tile is-ancestor">
-          <div class="tile is-vertical is-8">
+          <div class="tile is-vertical is-4">
             <div class="tile">
-              <div class="tile is-parent is-vertical">
-                <article class="tile is-child notification is-primary">
-                  <p class="title">Ingredients</p>
-                  <p class="subtitle">Top tile</p>
-                </article>
-                <article class="tile is-child notification is-warning">
-                  <p class="title">...tiles</p>
-                  <p class="subtitle">Bottom tile</p>
-                </article>
-              </div>
               <div class="tile is-parent">
                 <article class="tile is-child notification">
                   <p class="title">{{drink.strDrink}}</p>
                   <p class="subtitle">{{drink.strCategory}}</p>
-                  <figure class="image is-4by3">
-                    <img id="bigdrink" v-bind:src="drink.strDrinkThumb" />
+                  <figure class="image">
+                    <img style="width:200px;" id="bigdrink" v-bind:src="drink.strDrinkThumb" />
                   </figure>
                   <button v-on:click="NewDrink" class="button">Try another drink</button>
                 </article>
@@ -44,7 +34,7 @@
             </div>
           </div>
           <div class="tile is-parent">
-            <article class="tile is-child notification">
+            <article class="tile is-child notification is-4">
               <div class="content">
                 <p class="title">Instructions</p>
 
@@ -111,6 +101,6 @@ export default {
   height: 200px !important;
 }
 #bigdrink {
-  height: 400px !important;
+  height: 200px !important;
 }
 </style>

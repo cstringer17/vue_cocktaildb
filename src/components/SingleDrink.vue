@@ -6,7 +6,7 @@
         <div v-for="drink in drinks" v-bind:key="drink.id">
           <h2 class="title">{{ drink.strDrink }}</h2>
 
-          <img style="height:200px;width:200px;" id="thumbdrink" v-bind:src="drink.strDrinkThumb" />
+          <img id="thumbdrink" v-bind:src="drink.strDrinkThumb" />
 
           <div class="container buttons has-text-centered">
             <button v-on:click="NewDrink" class="button">Yes</button>
@@ -19,7 +19,7 @@
     <section v-if="!seen">
       <div v-for="drink in drinks" v-bind:key="drink.id">
         <div class="tile is-ancestor">
-          <div class="tile is-vertical is-4">
+          <div class="tile is-vertical">
             <div class="tile">
               <div class="tile is-parent">
                 <article class="tile is-child notification">
@@ -72,9 +72,6 @@ export default {
       console.log(message);
     },
     NewDrink: function (event) {
-      document.getElementById("left").style.width = "70%";
-      document.getElementById("right").style.width = "30%";
-      document.getElementById("right").style.marginLeft = "70%";
       axios
         .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
         .then((response) => (this.drinks = response.data.drinks));
@@ -82,9 +79,6 @@ export default {
       this.seen = true;
     },
     notYet: function (event) {
-      document.getElementById("left").style.width = "40%";
-      document.getElementById("right").style.width = "60%";
-      document.getElementById("right").style.marginLeft = "40%";
       this.seen = false;
       console.log(event);
       this.drinks.forEach((element) => {
@@ -97,10 +91,5 @@ export default {
 };
 </script>
 <style scoped>
-#thumbdrink {
-  height: 200px !important;
-}
-#bigdrink {
-  height: 200px !important;
-}
+
 </style>

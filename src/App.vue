@@ -3,10 +3,16 @@
     <Banner title="Welcome to Cocktail Hub" />
     <div id="left">
       <router-link to="/"></router-link>
-      <router-view />
+      
     </div>
-    <div id = "right">
-      <SingleDrink></SingleDrink>
+
+    <div class="columns">
+      <div class="column">
+        <router-view />
+      </div>
+      <div class="column">
+        <SingleDrink></SingleDrink>
+      </div>
     </div>
     <Footer />
   </div>
@@ -15,7 +21,7 @@
 //root compentents
 import Banner from "./components/rootComponents/Banner.vue";
 import Footer from "./components/rootComponents/Footer";
-import SingleDrink from "./components/SingleDrink"
+import SingleDrink from "./components/SingleDrink";
 
 import Vue from "vue";
 import Buefy from "buefy";
@@ -30,7 +36,7 @@ export default {
   components: {
     Banner,
     Footer,
-    SingleDrink
+    SingleDrink,
   },
 };
 </script>
@@ -44,15 +50,5 @@ export default {
 }
 html {
   background-color: #fac8cd;
-}
-#left{
-  width: 70%;
-  margin-left: 0;
-  position: absolute;
-}
-#right{
-  width: 30%;
-  margin-left: 70%;
-  position: absolute;
 }
 </style>
